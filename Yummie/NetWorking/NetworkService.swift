@@ -13,14 +13,13 @@ struct NetworkService {
     
     private init(){}
     
-    func myFirstRequest(){
-        request(route: .fetchAllCategories, method: .get, type: String.self) { _ in }
+    func myFirstRequest(complation: @escaping (Result<[Dish],Error>) -> Void){
+        request(route: .fetchAllCategories, method: .get, complation: complation)
     }
     
-    private func request<T:Codable>(route: Route,
+    private func request<T:Decodable>(route: Route,
                                     method:Method,
                                     parameters: [String:Any]? = nil,
-                                    type: T.Type,
                                     complation: @escaping (Result<T,Error>) -> Void){
         guard let request = createRequest(route: route, method: method, parameters: parameters) else {
             complation(.failure(AppError.unKnownError))
@@ -31,16 +30,50 @@ struct NetworkService {
             if let data = data{
                 result = .success(data)
                 let responseString = String(data: data, encoding: .utf8) ?? "could not stringifyour data"
-                print("The response is : \(responseString)")
             }else if let error = error {
                 result = .failure(error)
                 print("The error is : \(error.localizedDescription)")
             }
             DispatchQueue.main.sync {
-                
+                self.HandleResponse(result: result, complation: complation)
             }
         }.resume()
     }
+    
+    private func HandleResponse<T: Decodable>(result: Result<Data, Error>?, complation: @escaping (Result<T,Error>) -> Void){
+        
+        guard let result = result else {
+            complation(.failure(AppError.unKnownError))
+            return
+        }
+        switch result {
+        case .success(let data):
+            let decoder = JSONDecoder()
+            guard let response = try?
+                decoder.decode(ApiResponse<T>.self, from: data) else {
+                complation(.failure(AppError.errorDecoding))
+                return
+            }
+            
+            if let error = response.error{
+                complation(.failure(AppError.ServerError(error)))
+            }
+            
+            if let decodedData = response.data{
+                complation(.success(decodedData))
+            }else{
+                complation(.failure(AppError.errorDecoding))
+            }
+            
+        case .failure(let error):
+            complation(.failure(error))
+        }
+        
+        
+    }
+    
+    
+    
     
     /// The function help us to generate a urlRequest
     /// - Parameters:
