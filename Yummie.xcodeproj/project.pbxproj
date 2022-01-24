@@ -20,6 +20,7 @@
 		21211AA927923E51008AB3B4 /* DishPortraitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21211AA727923E51008AB3B4 /* DishPortraitCollectionViewCell.xib */; };
 		21211AAB279240F6008AB3B4 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21211AAA279240F6008AB3B4 /* Dish.swift */; };
 		216BA70727905DEC0079D30B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216BA70627905DEC0079D30B /* HomeViewController.swift */; };
+		217C3CEB279E261100862743 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217C3CEA279E261100862743 /* ApiResponse.swift */; };
 		2187220B2794BF59009FBA4C /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218722092794BF59009FBA4C /* DishListTableViewCell.swift */; };
 		2187220C2794BF59009FBA4C /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2187220A2794BF59009FBA4C /* DishListTableViewCell.xib */; };
 		2187220F2794C37A009FBA4C /* ListDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187220E2794C37A009FBA4C /* ListDishesViewController.swift */; };
@@ -76,6 +77,7 @@
 		21211AA727923E51008AB3B4 /* DishPortraitCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishPortraitCollectionViewCell.xib; sourceTree = "<group>"; };
 		21211AAA279240F6008AB3B4 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		216BA70627905DEC0079D30B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		217C3CEA279E261100862743 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		218722092794BF59009FBA4C /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
 		2187220A2794BF59009FBA4C /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
 		2187220E2794C37A009FBA4C /* ListDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				211F2AAB2795F689005ABAC6 /* Route.swift */,
 				211F2AAD2795FB58005ABAC6 /* Method.swift */,
 				210DFD18279CD15A000725E6 /* AppError.swift */,
+				217C3CEA279E261100862743 /* ApiResponse.swift */,
 			);
 			path = NetWorking;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				21CFC34D27949BD500428DB9 /* DishDetailViewController.swift in Sources */,
 				21B61723278F369D00054D6F /* OnboardingViewController.swift in Sources */,
 				216BA70727905DEC0079D30B /* HomeViewController.swift in Sources */,
+				217C3CEB279E261100862743 /* ApiResponse.swift in Sources */,
 				21CBA02B2791B9D700056BF0 /* Dishcategory.swift in Sources */,
 				211F2AAC2795F689005ABAC6 /* Route.swift in Sources */,
 				211F2AAA2795F171005ABAC6 /* NetworkService.swift in Sources */,
