@@ -9,6 +9,39 @@ import Foundation
 
 struct NetworkService {
     
+    static let shared = NetworkService()
+    
+    private init(){}
+    
+    func myFirstRequest(){
+        request(route: .fetchAllCategories, method: .get, type: String.self) { _ in }
+    }
+    
+    private func request<T:Codable>(route: Route,
+                                    method:Method,
+                                    parameters: [String:Any]? = nil,
+                                    type: T.Type,
+                                    complation: @escaping (Result<T,Error>) -> Void){
+        guard let request = createRequest(route: route, method: method, parameters: parameters) else {
+            complation(.failure(AppError.unKnownError))
+            return
+        }
+        URLSession.shared.dataTask(with: request){data, response, error in
+            var  result: Result<Data, Error>?
+            if let data = data{
+                result = .success(data)
+                let responseString = String(data: data, encoding: .utf8) ?? "could not stringifyour data"
+                print("The response is : \(responseString)")
+            }else if let error = error {
+                result = .failure(error)
+                print("The error is : \(error.localizedDescription)")
+            }
+            DispatchQueue.main.sync {
+                
+            }
+        }.resume()
+    }
+    
     /// The function help us to generate a urlRequest
     /// - Parameters:
     ///   - route: the path resource in the backend

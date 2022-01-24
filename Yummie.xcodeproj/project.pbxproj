@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F2BAF5B8357D0C9DD30E485 /* Pods_Yummie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFE2C53BD5E6F41D8A01231 /* Pods_Yummie.framework */; };
+		210DFD19279CD15A000725E6 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DFD18279CD15A000725E6 /* AppError.swift */; };
 		211F171E2791C5F300B9EBB5 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211F171D2791C5F300B9EBB5 /* Kingfisher.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		211F2AA42795D777005ABAC6 /* ListOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211F2AA32795D777005ABAC6 /* ListOrderViewController.swift */; };
 		211F2AA62795DB7E005ABAC6 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211F2AA52795DB7E005ABAC6 /* Order.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		210DFD18279CD15A000725E6 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		211F171D2791C5F300B9EBB5 /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		211F2AA32795D777005ABAC6 /* ListOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrderViewController.swift; sourceTree = "<group>"; };
 		211F2AA52795DB7E005ABAC6 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				211F2AA92795F171005ABAC6 /* NetworkService.swift */,
 				211F2AAB2795F689005ABAC6 /* Route.swift */,
 				211F2AAD2795FB58005ABAC6 /* Method.swift */,
+				210DFD18279CD15A000725E6 /* AppError.swift */,
 			);
 			path = NetWorking;
 			sourceTree = "<group>";
@@ -654,6 +657,7 @@
 				21B6172A278F4A8F00054D6F /* OnboardingCollectionViewCell.swift in Sources */,
 				211F2AA42795D777005ABAC6 /* ListOrderViewController.swift in Sources */,
 				2187220F2794C37A009FBA4C /* ListDishesViewController.swift in Sources */,
+				210DFD19279CD15A000725E6 /* AppError.swift in Sources */,
 				21211AAB279240F6008AB3B4 /* Dish.swift in Sources */,
 				21CFC3482794822400428DB9 /* DishLandScapCollectionViewCell.swift in Sources */,
 				21211AA827923E51008AB3B4 /* DishPortraitCollectionViewCell.swift in Sources */,
