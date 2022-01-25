@@ -35,6 +35,7 @@
 		21CFC3492794822400428DB9 /* DishLandScapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21CFC3472794822400428DB9 /* DishLandScapCollectionViewCell.xib */; };
 		21CFC34D27949BD500428DB9 /* DishDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFC34C27949BD500428DB9 /* DishDetailViewController.swift */; };
 		21CFC34F2794A01A00428DB9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CFC34E2794A01A00428DB9 /* UIViewController+Extension.swift */; };
+		21F942FC279F5D53001E01DD /* AllDishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F942FB279F5D53001E01DD /* AllDishes.swift */; };
 		21FDFCA02791BD750046E7DA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FDFC9F2791BD750046E7DA /* String+Extension.swift */; };
 		21FFADE3278E420500607943 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FFADE2278E420500607943 /* AppDelegate.swift */; };
 		21FFADE5278E420500607943 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FFADE4278E420500607943 /* SceneDelegate.swift */; };
@@ -93,6 +94,7 @@
 		21CFC34C27949BD500428DB9 /* DishDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDetailViewController.swift; sourceTree = "<group>"; };
 		21CFC34E2794A01A00428DB9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		21EAAE912791CD23008B6F5F /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21F942FB279F5D53001E01DD /* AllDishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDishes.swift; sourceTree = "<group>"; };
 		21FDFC9F2791BD750046E7DA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		21FDFCA12791BEE50046E7DA /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FFADDF278E420500607943 /* Yummie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 				21CBA02A2791B9D700056BF0 /* Dishcategory.swift */,
 				21211AAA279240F6008AB3B4 /* Dish.swift */,
 				211F2AA52795DB7E005ABAC6 /* Order.swift */,
+				21F942FB279F5D53001E01DD /* AllDishes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				21CBA0282791B3CF00056BF0 /* CategoryCollectionViewCell.swift in Sources */,
 				21B61728278F420B00054D6F /* OnboardingSlide.swift in Sources */,
 				21B61726278F3E4900054D6F /* UIView.swift in Sources */,
+				21F942FC279F5D53001E01DD /* AllDishes.swift in Sources */,
 				21FFADE3278E420500607943 /* AppDelegate.swift in Sources */,
 				211F2AAE2795FB58005ABAC6 /* Method.swift in Sources */,
 				21FFADE5278E420500607943 /* SceneDelegate.swift in Sources */,

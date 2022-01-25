@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import UIKit
 
-struct Dish:Decodable {
+struct Dish: Decodable {
     let id: String?
     let name: String?
     let description: String?

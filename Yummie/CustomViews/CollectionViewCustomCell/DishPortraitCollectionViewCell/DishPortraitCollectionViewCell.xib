@@ -32,8 +32,8 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ai-l5-Ps4">
-                                        <rect key="frame" x="0.0" y="32" width="144" height="150"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.sleet.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Ai-l5-Ps4">
+                                        <rect key="frame" x="0.0" y="32.5" width="144" height="152.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="dzo-if-TQ8"/>
                                         </constraints>
@@ -49,7 +49,7 @@
                                         <color key="textColor" red="0.94038814306259155" green="0.26253414154052734" blue="0.21208071708679199" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5zb-Hh-hkn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="5zb-Hh-hkn">
                                         <rect key="frame" x="0.0" y="222" width="144" height="62"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemGray2Color"/>
@@ -95,6 +95,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="cloud.sleet.fill" catalog="system" width="125" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
