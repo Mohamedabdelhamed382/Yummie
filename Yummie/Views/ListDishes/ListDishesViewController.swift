@@ -11,7 +11,7 @@ class ListDishesViewController: UIViewController {
 
     @IBOutlet weak var listDishesTableView: UITableView!
     var dish:[Dish] = []
-    var category: Dishcategory!
+    var category: DishCategory!
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -21,7 +21,7 @@ class ListDishesViewController: UIViewController {
 }
 extension ListDishesViewController{
     private func setup(){
-        title = category.name
+        title = category.title
         initializeCollectionview()
         bindingData()
         registerCategoryCell()

@@ -18,9 +18,9 @@ class CategoryCollectionViewCell: UICollectionViewCell {
 
 extension CategoryCollectionViewCell{
     
-    func setup(category: Dishcategory){
-        categoryTitleLebel.text = category.name
-        categoryImageView.kf.setImage(with: category.image.asUrl)
+    func setup(category: DishCategory){
+        categoryTitleLebel.text = category.title
+        categoryImageView.kf.setImage(with: category.image?.asUrl)
     }
      
 }

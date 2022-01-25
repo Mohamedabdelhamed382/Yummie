@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-struct Dishcategory:Decodable {
-    let id: String
-    let name: String
-    let image: String
+struct DishCategory: Decodable {
+    let id: String?
+    let title: String?
+    let image: String?
 }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var categoryCollectionView: UICollectionView!
@@ -14,22 +14,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var specialsCollectionView: UICollectionView!
     
     
-    var category:[Dishcategory] = []
+    var categories:[DishCategory] = []
     var popular:[Dish] = []
     var specials: [Dish] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        NetworkService.shared.myFirstRequest { (result) in
-            switch result{
-            case .success(let data):
-                for dish in data {
-                    print (dish.name ?? "")
-                }
-            case .failure(let error):
-                print("the error is \(error.localizedDescription)")
-            }
-        }
+        
     }
     
 }
@@ -58,17 +49,22 @@ extension HomeViewController{
         
     }
     private func bindingData(){
-        category.append(.init(id: "1", name: "مطعم ديار الشام", image: "https://apis.tatx.com/uploads/categories/16360294598769.png"))
-        category.append(.init(id: "2", name: "تموينات", image: "https://apis.tatx.com/uploads/categories/16360294411016.png"))
-        category.append(.init(id: "3", name: "مطعم ديار الشام", image: "https://apis.tatx.com/uploads/categories/16360294598769.png"))
-        category.append(.init(id: "4", name: "تموينات", image: "https://apis.tatx.com/uploads/categories/16360294144946.png"))
-        category.append(.init(id: "5", name: "مطعم ديار الشام", image: "https://apis.tatx.com/uploads/categories/16360294499354.png"))
-        
-        popular.append(.init(id: "1", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294144946.png", calories: 1230))
-        popular.append(.init(id: "2", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294598769.png", calories: 1045))
-        popular.append(.init(id: "3", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294144946.png", calories: 70))
-        popular.append(.init(id: "4", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294598769.png", calories: 80))
-        popular.append(.init(id: "5", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294144946.png", calories: 90))
+
+        ProgressHUD.show()
+        NetworkService.shared.fetchAllCategories { [weak self] (result) in
+            switch result{
+            case .success(let allDishes):
+                ProgressHUD.dismiss()
+                self?.categories = allDishes.categories ?? []
+                self?.popular = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.specialsCollectionView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -77,7 +73,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         
         switch collectionView {
         case categoryCollectionView:
-            return  category.count
+            return  categories.count
         case popularCollectionView, specialsCollectionView :
         return  popular.count
         default:
@@ -91,7 +87,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         switch collectionView {
         case categoryCollectionView:
             let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
-            cell.setup(category: category[indexPath.row])
+            cell.setup(category: categories[indexPath.row])
             return cell
         
         case popularCollectionView:
@@ -112,7 +108,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         switch collectionView {
         case categoryCollectionView:
             let controller = ListDishesViewController.instantiate()
-            controller.category = category[indexPath.row]
+            controller.category = categories[indexPath.row]
             navigationController?.pushViewController(controller, animated: true)
         
         case popularCollectionView:

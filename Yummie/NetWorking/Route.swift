@@ -14,8 +14,7 @@ enum Route {
     
     var description:String{
         switch self {
-        case .fetchAllCategories:
-            return "/dishes/cat1"
+        case .fetchAllCategories:  return "/dish-categories"
         }
     }
     
