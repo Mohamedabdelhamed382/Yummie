@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListOrderViewController: UIViewController {
     @IBOutlet weak var listOrderTableView: UITableView!
@@ -15,6 +16,9 @@ class ListOrderViewController: UIViewController {
         setup()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        bindData()
+    }
  
 }
 
@@ -36,15 +40,17 @@ extension ListOrderViewController{
     }
     
     private func bindData(){
-        order.append(.init(id: "234234", name: "mohamed", dish: .init(id: "1", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294144946.png", calories: 1230)))
-       
-        order.append(.init(id: "232312", name: "ahmed", dish:.init(id: "2", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294598769.png", calories: 1045)))
-       
-        order.append(.init(id: "234234", name: "mohamed", dish: .init(id: "1", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294144946.png", calories: 1230)))
-       
-        order.append(.init(id: "234234", name: "mohamed", dish: .init(id: "1", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294144946.png", calories: 1230)))
-      
-        order.append(.init(id: "234234", name: "mohamed", dish:.init(id: "3", name: "بروفي شورمز", description: "These example sentences are selected automatically from various online news sources to reflect current usage of the word 'description.' Views expressed in the examples do not represent the opinion of Merriam-Webster or its editors. Send us feedback.", image: "https://apis.tatx.com/uploads/categories/16360294144946.png", calories: 70)))
+        ProgressHUD.show()
+        NetworkService.shared.fetchOrder { [weak self] (result) in
+            switch result {
+            case .success(let orders):
+                ProgressHUD.dismiss()
+                self?.order = orders
+                self?.listOrderTableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 }
 
