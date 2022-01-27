@@ -28,8 +28,8 @@ class HomeViewController: UIViewController {
 extension HomeViewController{
     
     private func setup(){
-        initializeCollectionview()
         bindingData()
+        initializeCollectionview()
         registerCategoryCell()
     }
     
@@ -110,7 +110,6 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
             let controller = ListDishesViewController.instantiate()
             controller.category = categories[indexPath.row]
             navigationController?.pushViewController(controller, animated: true)
-        
         case popularCollectionView:
             let controller = DishDetailViewController.instantiate()
             controller.dish = popular[indexPath.row]
