@@ -20,5 +20,6 @@ target 'Yummie' do
 pod "Alamofire"
 pod 'Kingfisher', '~> 7.0'
 pod 'ProgressHUD'
+pod 'IQKeyboardManagerSwift'
 
 end
