@@ -24,6 +24,7 @@
 		2187220B2794BF59009FBA4C /* DishListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218722092794BF59009FBA4C /* DishListTableViewCell.swift */; };
 		2187220C2794BF59009FBA4C /* DishListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2187220A2794BF59009FBA4C /* DishListTableViewCell.xib */; };
 		2187220F2794C37A009FBA4C /* ListDishesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2187220E2794C37A009FBA4C /* ListDishesViewController.swift */; };
+		21A41D9E27A36F3F00E7DC66 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A41D9D27A36F3F00E7DC66 /* UserDefaults+Extensions.swift */; };
 		21B61723278F369D00054D6F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B61722278F369D00054D6F /* OnboardingViewController.swift */; };
 		21B61726278F3E4900054D6F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B61725278F3E4900054D6F /* UIView.swift */; };
 		21B61728278F420B00054D6F /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B61727278F420B00054D6F /* OnboardingSlide.swift */; };
@@ -82,6 +83,7 @@
 		218722092794BF59009FBA4C /* DishListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishListTableViewCell.swift; sourceTree = "<group>"; };
 		2187220A2794BF59009FBA4C /* DishListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DishListTableViewCell.xib; sourceTree = "<group>"; };
 		2187220E2794C37A009FBA4C /* ListDishesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishesViewController.swift; sourceTree = "<group>"; };
+		21A41D9D27A36F3F00E7DC66 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		21B61722278F369D00054D6F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		21B61725278F3E4900054D6F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		21B61727278F420B00054D6F /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				21B61725278F3E4900054D6F /* UIView.swift */,
 				21FDFC9F2791BD750046E7DA /* String+Extension.swift */,
 				21CFC34E2794A01A00428DB9 /* UIViewController+Extension.swift */,
+				21A41D9D27A36F3F00E7DC66 /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2187220B2794BF59009FBA4C /* DishListTableViewCell.swift in Sources */,
+				21A41D9E27A36F3F00E7DC66 /* UserDefaults+Extensions.swift in Sources */,
 				21CFC34F2794A01A00428DB9 /* UIViewController+Extension.swift in Sources */,
 				211F2AA62795DB7E005ABAC6 /* Order.swift in Sources */,
 				21211AA42791F56D008AB3B4 /* cardView.swift in Sources */,
