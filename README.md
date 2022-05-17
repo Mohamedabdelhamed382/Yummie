@@ -1,8 +1,7 @@
 # Yummie
-
+GitHub application for learning purposes.
 
 About Applaction : 
-
 the application lets you enjoy with order delicious dishes with a display of all of the components of the dish and how many calories have.
 MVC, Networking with Almofire.
 
