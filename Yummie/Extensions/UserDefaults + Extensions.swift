@@ -11,8 +11,6 @@ extension UserDefaults{
     
     private enum UserDefaultsKeys: String{
         case hasOnboarded
-        
-        
     }
     
     var hasOnboarded: Bool{
